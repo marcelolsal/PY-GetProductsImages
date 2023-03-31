@@ -1,15 +1,16 @@
-
-#$ python main.py <Store Url>
 #Example: python main.py https://www.rowecasaorganics.com/
 
 import requests # request img from web
 import shutil # save img locally
 import sys
 import json
+import os
 
 if len(sys.argv) < 1:
     raise ValueError("Not enough commandline arguments! Please run with <executable> <server> <database> <username> <password> <folder_path>")
 
+if os.path.exists('images') == False:
+    os.mkdir('images')
 raw_url = sys.argv[1]+'products.json?limit=250'
 continueRequesting = True
 pageCounter = 1
