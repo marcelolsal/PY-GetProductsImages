@@ -35,4 +35,4 @@ while continueRequesting:
     else:
         print(res.error)
 
-print("Page Counte "+str(pageCounter))
+print("Page Counter "+str(pageCounter))
